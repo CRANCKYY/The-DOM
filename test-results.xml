@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.006" tests="2" failures="2">
+  <testsuite name="Root Suite" timestamp="2026-07-10T09:35:38" tests="0" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="DOM Flatbook Tests" timestamp="2026-07-10T09:35:38" tests="2" file="C:\Users\Gamer\Desktop\MORINGA\The-DOM\test\test.js" time="0.004" failures="2">
+    <testcase name="DOM Flatbook Tests should change the header text" time="0.000" classname="should change the header text">
+      <failure message="document is not defined" type="ReferenceError"><![CDATA[ReferenceError: document is not defined
+    at Context.<anonymous> (test\test.js:5:9)
+    at process.processImmediate (node:internal/timers:478:21)]]></failure>
+    </testcase>
+    <testcase name="DOM Flatbook Tests should have book-container element" time="0.000" classname="should have book-container element">
+      <failure message="document is not defined" type="ReferenceError"><![CDATA[ReferenceError: document is not defined
+    at Context.<anonymous> (test\test.js:12:9)
+    at process.processImmediate (node:internal/timers:478:21)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

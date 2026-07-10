@@ -13,12 +13,12 @@
         }
         header {
             background-color: #2c3e50;
-            color: White;
+            color: white;
             padding: 20px;
             text-align: center;
             margin-bottom: 30px;
         }
-        #book-container {
+        #book-list {  /* ← FIXED: Changed from #book-container */
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
@@ -57,8 +57,7 @@
     </header>
 
     <main>
-        <div id="book-container">
-        </div>   
+        <div id="book-list"></div>  <!-- ← FIXED: Changed ID -->
     </main>
 
     <script src="index.js"></script>

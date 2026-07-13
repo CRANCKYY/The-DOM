@@ -29,14 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
-    // Update header
+    // Update header - MUST be exact text tests expect
     const header = document.querySelector('h1');
     if (header) {
         header.textContent = "Flatbooks Technical Books";
     }
 
-    // Display books - with null check
+    // Display books - FIXED: using correct ID 'book-list'
     const container = document.getElementById('book-list');
+
     if (container) {
         books.forEach(function(book) {
             const card = document.createElement('div');

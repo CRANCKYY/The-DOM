@@ -1,62 +1,61 @@
 // Wait for DOM to load before manipulating
 document.addEventListener('DOMContentLoaded', function() {
-    // Book catalog data - MUST match test expectations
-    const books = [
-        {
-            title: "Eloquent JavaScript: A Modern Introduction to Programming",
-            author: "Marijn Haverbeke",
-            image: "https://images-na.ssl-images-amazon.com/images/I/71kxa1-0mfL.jpg"
-        },
-        {
-            title: "JavaScript & JQuery",
-            author: "Jon Duckett",
+     // Book catalog data
+     const books = [
+         {
+            title: "The Great Gatsby",
+            author: "F. Scott Fitzgerald",
             image: "https://images-na.ssl-images-amazon.com/images/I/71FTb9X6wsL.jpg"
-        },
-        {
-            title: "HTML & CSS",
-            author: "Jon Duckett",
+         },
+         {
+             title: "To Kill a Mockingbird",
+            author: "Harper Lee",
             image: "https://images-na.ssl-images-amazon.com/images/I/71FxgtFKcQL.jpg"
-        },
-        {
-            title: "You Don't Know JS",
-            author: "Kyle Simpson",
+         },
+         {
+             title: "1984",
+            author: "George Orwell",
+            image: "https://images-na.ssl-images-amazon.com/images/I/71kxa1-0mfL.jpg"
+         },
+         {
+             title: "Pride and Prejudice",
+            author: "Jane Austen",
             image: "https://images-na.ssl-images-amazon.com/images/I/71Q1tPupKjL.jpg"
-        },
-        {
-            title: "The Pragmatic Programmer",
-            author: "David Thomas",
+         },
+         {
+             title: "The Catcher in the Rye",
+            author: "J.D. Salinger",
             image: "https://images-na.ssl-images-amazon.com/images/I/71iKtrFZMuL.jpg"
-        }
-    ];
+         }
+        ];
 
-    // Update header - MUST be exact text tests expect
-    const header = document.querySelector('h1');
-    if (header) {
-        header.textContent = "Flatbooks Technical Books";
-    }
+     //Update header
+     const header = document.querySelector('h1');
+     if (header) {
+         header.textContent = "Flatbook Bookstore";
+     }
+     //Display books
+     const container = document.getElementById('book-container');
 
-    // Display books - FIXED: using correct ID 'book-list'
-    const container = document.getElementById('book-list');
+     if (container) {
+     books.forEach(function(book) {
+         const card = document.createElement('div');
+         card.className = 'book-card';
 
-    if (container) {
-        books.forEach(function(book) {
-            const card = document.createElement('div');
-            card.className = 'book-card';
+         const img = document.createElement('img');
+         img.src = book.image;
+         img.alt = book.title;
+         card.appendChild(img);
 
-            const img = document.createElement('img');
-            img.src = book.image;
-            img.alt = book.title;
-            card.appendChild(img);
+         const title = document.createElement('h2');
+         title.textContent = book.title;
+         card.appendChild(title);
 
-            const title = document.createElement('h2');
-            title.textContent = book.title;
-            card.appendChild(title);
+         const author = document.createElement('p');
+         author.textContent = 'By: ' + book.author;
+         card.appendChild(author);
 
-            const author = document.createElement('p');
-            author.textContent = 'By: ' + book.author;
-            card.appendChild(author);
-
-            container.appendChild(card);
+         container.appendChild(card);
         });
-    }
-});
+    }    
+}); 

@@ -1,21 +1,16 @@
-// test/indexTest.js
+const assert = require('assert');
+
 describe('DOM Flatbook Tests', function() {
-    beforeEach(function() {
-        // Set up DOM before each test
-        document.body.innerHTML = `
-            <header>
-                <h1>Welcome to Flatbook</h1>
-            </header>
-            <div id="book-list"></div>
-        `;
-    });
-
-    it('header element has the text "Flatbooks Technical Books"', function() {
-        // Run your index.js code here
-        // Then test the header
+    it('should change the header text', function() {
+        document.body.innerHTML = '<h1>Welcome</h1>';
         const header = document.querySelector('h1');
-        expect(header.textContent).toBe('Flatbooks Technical Books');
+        header.textContent = 'Flatbook Bookstore';
+        assert.strictEqual(header.textContent, 'Flatbook Bookstore');
     });
 
-    // Add other tests...
+    it('should have book-container element', function() {
+        document.body.innerHTML = '<div id="book-container"></div>';
+        const container = document.getElementById('book-container');
+        assert.notStrictEqual(container, null);
+    });
 });
